@@ -24,4 +24,7 @@ export class ProductsService {
   getCartItemsByCustId(CustId:number){
     return this.http.get('https://freeapi.miniprojectideas.com/api/amazon/GetCartProductsByCustomerId?id='+CustId)
   }
+  removeProductFromCart(id:number){
+    return this.http.get('https://freeapi.miniprojectideas.com/api/amazon/DeleteProductFromCartById?id='+id)
+  }
 }

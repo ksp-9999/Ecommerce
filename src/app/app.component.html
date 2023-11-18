@@ -81,16 +81,16 @@
               <hr>
               <div class="row">
                 <div class="col-md-9 text-center">
-                  Total
+                  <strong>Total</strong>
                 </div>
                 <div class="col-md-2">
-                  {{subTotal}}
+                  <strong>{{subTotal}}</strong>
                 </div>
               </div>
               <hr>
               <div class="row">
                 <div class="col-12 text-center">
-                  <button class="btn btn-warning text-light">
+                  <button class="btn btn-warning text-light" (click)="redirectToSales()">
                     checkout
                   </button>
                 </div>

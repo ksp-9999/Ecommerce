@@ -17,16 +17,16 @@ const routes:Routes=[
     component:HomeComponent
   },
   {
-    path:'**',
-    component:HomeComponent
-  },
-  {
     path:'cart',
     component:CartComponent
   },
   {
     path:'sale',
     component:SaleComponent
+  },
+  {
+    path:'**',
+    component:HomeComponent
   }
 ]
 

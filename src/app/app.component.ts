@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from './services/products.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { ProductsService } from './services/products.service';
 export class AppComponent implements OnInit{
   cartproducts:any[]=[]
   subTotal=0
-  constructor(private productservice: ProductsService){
+  constructor(private productservice: ProductsService, private router:Router){
     this.productservice.cartaddedsubject.subscribe((res:any)=>{
     this.loadcart()
     })
@@ -24,5 +25,9 @@ ngOnInit(): void {
         this.subTotal=this.subTotal+amt.productPrice
       });
     })
+  }
+
+  redirectToSales(){
+    this.router.navigateByUrl('sale')
   }
 }
