@@ -30,6 +30,7 @@ removeItemFromCart(id:any){
     if(res.result){
       this.loadcart()
     }
+    this.productsservice.cartaddedsubject.next(true)
   })
 }
 }
