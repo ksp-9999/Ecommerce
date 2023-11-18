@@ -63,13 +63,40 @@
         <div class="navbar-nav mx-2">
           <a href="#" class="nav-item nav-link text-light fw-bold"><i class="bi-search" style="font-size: 18px;"></i></a>
         </div>
-        <div class="navbar-nav mx-2 postion-relative" style="height: auto;">
-          <a href="#" class="nav-item nav-link text-light mt-2 mb-0 p-0 postion-relative" ><h5>
+        <div class="navbar-nav mx-2 postion-relative cartdiv" style="height: auto;">
+          <a href="#" class="myicon nav-item nav-link text-light mt-2 mb-0 p-0 postion-relative" ><h5>
             <i class="fa-solid fa-cart-shopping ">
-              <sup class="badge bg-danger postion-fixed  top-7 start-0 p-2">2</sup>
+              <sup class="badge bg-danger postion-fixed  top-7 start-0 p-2">{{cartproducts.length}}</sup>
             </i>
           </h5>
           </a>
+          <div class="cartitems" style="position: fixed;right: 10px; top: 50px; display: none; width: auto; height: 50vh;overflow-y: scroll ;color: black;z-index: 2;background-color: beige; border-radius: 5px;">
+            <div class="cartconatiner">
+              <div class="row mt-2" *ngFor="let product of cartproducts">
+                <div class="col-md-4"><img [src]='product.productImageUrl' onerror="this.onerror=null;this.src='assets/altimage.jpeg'" alt="imghere" style="width: 100px; height: 50px;z-index: 2;" class="img-fluid img-thumbnail"></div>
+                <div class="col-3 d-flex justify-content-center align-content-center" style="height: auto;" >{{product.productName |mypipe:5}}</div>
+                <div class="col-2">{{product.quantity+1}}</div>
+                <div class="col-2">{{product.productPrice}}</div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-md-9 text-center">
+                  Total
+                </div>
+                <div class="col-md-2">
+                  {{subTotal}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-12 text-center">
+                  <button class="btn btn-warning text-light">
+                    checkout
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -20,12 +20,12 @@
                     <div class="box-shadow ">
                         <div class="card">
                             <img style="height: 200px;" [src]='product.productImageUrl'  alt="" class="img-fluid card-img-top img-thumbnail" onerror="this.onerror=null;this.src='assets/altimage.jpeg'">
-                            <div class="card-body text-center " style="">
-                                <p class="card-title fw-bold" >{{product.productName | mypipe}}</p>
+                            <div class="card-body text-center " >
+                                <p class="card-title fw-bold" >{{product.productName | mypipe:10}}</p>
                                 <p class="card-text">
                                     <span class="text-danger">Price: &nbsp;{{product.productPrice | currency: 'INR'}}</span>
                                 </p>
-                                <button class="btn btn-success">Add to cart</button>
+                                <button class="btn btn-success" (click)="addItemToCart(product.productId)">Add to cart</button>
                             </div>
                         </div>
                     </div>

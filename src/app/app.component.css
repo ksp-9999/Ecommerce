@@ -1,3 +1,9 @@
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+.cartdiv:hover .cartitems{
+    display: block !important;
+}
+.cartitems:hover{
+    display: block !important;
+}

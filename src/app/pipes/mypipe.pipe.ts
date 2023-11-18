@@ -5,9 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class MypipePipe implements PipeTransform {
 
-  transform(value: string): string {
+  transform(value: string,len:number): string {
     if(value.length>=15){
-      return value.slice(0,15)
+      return value.slice(0,len)
     }
     else{
       return value
